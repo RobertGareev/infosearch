@@ -21,7 +21,7 @@ public class Crawler {
     }
 
     public static void processUrl(String url) {
-        if (!URLS.contains(url) && URLS.size() <= 100) {
+        if (!URLS.contains(url) && URLS.size() <= 100 && url.startsWith("https://www.delivery-club.ru")) {
             try {
                 URLS.add(url);
                 Document document = Jsoup.connect(url).get();
